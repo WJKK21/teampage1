@@ -1,54 +1,46 @@
-
-// 태그 생성
 const root = document.getElementById('root')
-const title = document.createElement( "header" )
-const main = document.createElement( "main" )
-const footer = document.createElement('footer')
-const h1 = document.createElement( "h1" )
 
 
-root.appendChild(title);
-root.appendChild(main);
-root.appendChild(footer);
+// div 생성
+var todo = ['세동서유', '세대는 급하게 변하지만 우리는 흐르듯 펼친다', '팀장 김동주', '팀원 임지성 ', '팀원 이재권', '팀원 최대건', '팀원 정지은'];
+for (var i = 0; i < todo.length; i++) {
+	var div = document.createElement('div');
+	div.textContent = todo[i];
+	document.getElementById('root').appendChild(div);
+}
 
-//내용 넣기 
-root.children[0].appendChild(h1)
-console.log(root.children[0])
-root.children[0].textContent(세동서유)
-
-
-main.innerHTML= "<div><div>세대는 급하게 변하지만 우리는 흐르듯 펼친다</div>김동주 <div> </div></div>"
-footer.innerHTML= "<div>세동서유</div>"
-
+//
 
 //body css
 document.body.style.margin = '0'
 document.body.style.padding = '0'
 document.body.style.background = 'cadetblue'
 
+// title css 
+root.children[0].style.background = 'tomato'
+root.children[0].style.fontSize = '5em'
+root.children[0].style.display = 'flex'
+root.children[0].style.justifyContent = 'center';
+root.children[0].style.margin = '0'
 
-//title css
-title.style.display = 'flex'
-title.style.flexDirection = ''
-title.style.justifyContent = 'space-evenly'
-title.children[0].style.margin = '10px'
-title.style.background = 'salmon'
-title.style.fontSize = '3em'
+// sub title
+root.children[1].style.margin = '0'
+root.children[1].style.fontSize = '1.5em'
+root.children[1].style.display = 'flex'
+root.children[1].style.justifyContent = 'center';
 
-//main css
-main.style.display = 'flex'
-main.style.justifyContent = 'center'
-main.style.margin = '0'
-main.style.padding = '0'
-main.style.background = '#ccc'
+// team list
+root.children[2].style.margin = '10px'
+root.children[3].style.margin = '10px'
+root.children[4].style.margin = '10px'
+root.children[5].style.margin = '10px'
+root.children[6].style.margin = '10px'
 
-//footer css
-footer.style.display = 'flex'
-footer.style.justifyContent = 'center'
-footer.style.margin = '0'
-footer.style.padding = '0'
-footer.style.background = '#333'
-
+root.children[2].style.fontSize = '1.3em'
+root.children[3].style.fontSize = '1.3em'
+root.children[4].style.fontSize = '1.3em'
+root.children[5].style.fontSize = '1.3em'
+root.children[6].style.fontSize = '1.3em'
 
 
 const _EXAMDATA = {
@@ -56,7 +48,7 @@ const _EXAMDATA = {
     teamNumber : 5,
     teamName: "세동서유",
     teamNameStory: "세대는 급하게 변하지만 우리는 흐르듯 펼친다",
-    teamManager: "dongju",
+    teamManager: "0",
     teamAllMember: [
       {
         memberNumber: 0,
@@ -111,6 +103,8 @@ const _EXAMDATA = {
 }
 
 for (let i = 0; i <_EXAMDATA.lenght; i++ ){
-
+  console.log(_EXAMDATA[i])
 }
 
+//main.innerHTML= "<div><div>세대는 급하게 변하지만 우리는 흐르듯 펼친다</div>김동주 <div> </div></div>"
+//footer.innerHTML= "<div>세동서유</div>"
