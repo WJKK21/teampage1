@@ -1,34 +1,54 @@
 
-const hello = document.createElement( "h1" )
-document.body.appendChild(hello);
-
-
-function addElement () {
-var newDiv = document.createElement("div");
-var newContent = document.createTextNode("환영합니다!");
-newDiv.appendChild(newContent);
+// 태그 생성
 const root = document.getElementById('root')
-document.body.insertBefore(newDiv, root);
-}
+const title = document.createElement( "header" )
+const main = document.createElement( "main" )
+const footer = document.createElement('footer')
+const h1 = document.createElement( "h1" )
 
 
+root.appendChild(title);
+root.appendChild(main);
+root.appendChild(footer);
 
-document.querySelector("#makeBtn").addEventListener("click",function(){
-   
-   //-동적으로 요소 추가하고 자식요소로 추가하기 과정 
-   //1. 동적으로 만든 요소를 만들고 참조값을 p 변수에 담기
-   let p1 = document.createElement("p");
+//내용 넣기 
+root.children[0].appendChild(h1)
+console.log(root.children[0])
+root.children[0].textContent(세동서유)
 
-   //2. 만든 p요소에 class 속성 추가하기
-   p1.setAttribute("class","my-class");
 
-   //3.만든 p요소에 innerText 추가하기  
-   p1.innerText = "p1요소입니다.";
+main.innerHTML= "<div><div>세대는 급하게 변하지만 우리는 흐르듯 펼친다</div>김동주 <div> </div></div>"
+footer.innerHTML= "<div>세동서유</div>"
 
-   //4. 만든 p요소를 id가 one인 요소(div)의 자식 요소로 추가하기
-   document.querySelector("#one").append(p1);
 
-});
+//body css
+document.body.style.margin = '0'
+document.body.style.padding = '0'
+document.body.style.background = 'cadetblue'
+
+
+//title css
+title.style.display = 'flex'
+title.style.flexDirection = ''
+title.style.justifyContent = 'space-evenly'
+title.children[0].style.margin = '10px'
+title.style.background = 'salmon'
+title.style.fontSize = '3em'
+
+//main css
+main.style.display = 'flex'
+main.style.justifyContent = 'center'
+main.style.margin = '0'
+main.style.padding = '0'
+main.style.background = '#ccc'
+
+//footer css
+footer.style.display = 'flex'
+footer.style.justifyContent = 'center'
+footer.style.margin = '0'
+footer.style.padding = '0'
+footer.style.background = '#333'
+
 
 
 const _EXAMDATA = {
@@ -90,4 +110,7 @@ const _EXAMDATA = {
   },
 }
 
+for (let i = 0; i <_EXAMDATA.lenght; i++ ){
+
+}
 
