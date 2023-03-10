@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="root"></div>
+
+  <h1>원하는 요소를 동적으로 만들기 연습</h1>
+  <div id="one" class="wrapper">
+  </div>
+  <button id="makeBtn">만들기</button>
+  <script>
+
+document.querySelector("#makeBtn").addEventListener("click",function(){
+     
+     //-동적으로 요소 추가하고 자식요소로 추가하기 과정 
+     //1. 동적으로 만든 요소를 만들고 참조값을 p 변수에 담기
+     let p1 = document.createElement("p");
+
+     //2. 만든 p요소에 class 속성 추가하기
+     p1.setAttribute("class","my-class");
+
+     //3.만든 p요소에 innerText 추가하기  
+     p1.innerText = "p1요소입니다.";
+
+     //4. 만든 p요소를 id가 one인 요소(div)의 자식 요소로 추가하기
+     document.querySelector("#one").append(p1);
+
+ });
+
+  </script>
+</body>
+</html>
